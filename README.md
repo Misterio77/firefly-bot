@@ -21,7 +21,7 @@ You'll need python 3.8 and pip installed
 - Clone the repository
 - Install dependencies by running `pip install -r requirements.txt`
 - Run `export TELEGRAM_BOT_TOKEN=<your-bot-token>`
-- Run `python3 ./src/bot.py`
+- Run `python3 ./firefly_bot/bot.py`
 
 ---
 
@@ -67,7 +67,7 @@ You can also specify accounts by using their id instead of their name -
 - Install [Poetry](https://github.com/python-poetry/poetry)
 - Install dependencies by running `poetry install`
 - Run `poetry shell` to activate virtualenv
-- Start the bot by running `python src/bot.py`
+- Start the bot by running `python firefly_bot/bot.py`
 
 ### Notes
 

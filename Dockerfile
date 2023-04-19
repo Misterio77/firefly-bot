@@ -6,7 +6,7 @@ ENV CONFIG_PATH=/config
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY src .
+COPY firefly_bot .
 
 CMD [ "python", "/app/bot.py" ]
 VOLUME [ "/config" ]

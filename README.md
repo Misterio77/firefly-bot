@@ -15,6 +15,19 @@ docker create \
   vjfalk1/firefly-telegram-bot
 ```
 
+### Nix
+
+```bash
+TELEGRAM_BOT_TOKEN=<your-bot-token> nix run github:shizunge/firefly-bot
+```
+
+Or clone the repository and run:
+```bash
+TELEGRAM_BOT_TOKEN=<your-bot-token> nix run
+```
+
+Alternatively, enter a shell with `nix develop` and run with `python -m firefly_bot`
+
 ### Poetry
 - Clone the repository
 - Install dependencies by running `poetry install`

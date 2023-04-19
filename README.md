@@ -15,13 +15,18 @@ docker create \
   vjfalk1/firefly-telegram-bot
 ```
 
-### Manual
-You'll need python 3.8 and pip installed
-
+### Poetry
 - Clone the repository
-- Install dependencies by running `pip install -r requirements.txt`
-- Run `export TELEGRAM_BOT_TOKEN=<your-bot-token>`
-- Run `python3 ./firefly_bot/bot.py`
+- Install dependencies by running `poetry install`
+- Run `TELEGRAM_BOT_TOKEN=<your-bot-token> poetry run firefly-bot`
+    - Alternatively, enter a shell using `poetry shell` and run `python -m firefly_bot`
+
+### Pip
+- Clone the repository
+- (Optional) Create and enter a virtualenv: `python3 -m venv .venv && source .venv/bin/activate`
+- Install the dependencies by running: `pip install -r requirements.txt`
+- Run `TELEGRAM_BOT_TOKEN=<your-bot-token> python -m firefly_bot`
+
 
 ---
 
@@ -30,7 +35,7 @@ You'll need python 3.8 and pip installed
 ### Setup
 - Once the bot is up and running, initiate a chat with the bot. Send `/start` to initiate setup 
   - `/start` can also be used to re-run the setup at a later time
-- You will first be asked for your Firefly URL. Enter the full URL including the protocol. Eg - `https://firefly.host.com`
+- You will first be asked for your Firefly URL. Enter the full URL including the protocol. e.g. - `https://firefly.host.com`
   - Make sure **not** to include a trailing slash
 - Second, you will be asked for your User Token. You will have to generate one from the profile section in your Firefly instance, under OAuth. 
 - Lastly, you will be asked for a default account, by default all transactions will use this account as the source account, however, you can override it per transaction
@@ -38,7 +43,9 @@ You'll need python 3.8 and pip installed
 ### Creating a Transaction
 All you need to do is send a message to the bot with the following format
 
-```Amount, Description, Category, Budget, Source account, Destination account```
+```
+Amount, Description, Category, Budget, Source account, Destination account
+```
 
 Only the first two values are needed. The rest are optional. The description value is used for destination account as well. 
   
@@ -46,28 +53,29 @@ Only the first two values are needed. The rest are optional. The description val
 
 A simple one - 
 
-```5, Starbucks```
+```
+5, Starbucks
+```
 
 One with all the fields being used -
 
-```5, Mocha with an extra shot for Steve, Coffee, Food Budget, UCO Bank, Starbucks```
+```
+5, Mocha with an extra shot for Steve, Coffee, Food Budget, UCO Bank, Starbucks
+```
 
-You can skip specfic fields by leaving them empty (except the first two) - 
+You can skip specific fields by leaving them empty (except the first two) - 
 
-```5, Starbucks, , Food Budget, UCO Bank```
+```
+5, Starbucks, , Food Budget, UCO Bank
+```
 
 You can also specify accounts by using their id instead of their name - 
 
-```5, Mocha with an extra shot for Steve, Coffee, Food Budget, 5, 35```
+```
+5, Mocha with an extra shot for Steve, Coffee, Food Budget, 5, 35
+```
 
 ---
-
-## Development
-- Clone the repository
-- Install [Poetry](https://github.com/python-poetry/poetry)
-- Install dependencies by running `poetry install`
-- Run `poetry shell` to activate virtualenv
-- Start the bot by running `python firefly_bot/bot.py`
 
 ### Notes
 

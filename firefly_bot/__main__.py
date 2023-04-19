@@ -9,7 +9,7 @@ import logging
 import os
 from pathlib import Path
 
-from firefly import Firefly
+from firefly_bot.firefly import Firefly
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup,
                       ReplyKeyboardRemove)
 from telegram.ext import (CallbackQueryHandler, CommandHandler,
